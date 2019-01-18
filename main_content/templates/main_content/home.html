@@ -1,0 +1,69 @@
+{# load all static directories #}
+{% load static %}
+{% load staticfiles %}
+
+{# load css and style files #}
+<link rel="stylesheet" type="text/css" href="{% static 'main_content/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Open+Sans" rel="stylesheet">
+
+{# for markdown capabilities #}
+{% load markdown_deux_tags %}
+
+{# load javascript/jquery library #}
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+
+{# load my scripts #}
+<script type="text/javascript" src="{% static 'main_content/change_preview.js' %}"></script>
+
+{# header #}
+<div id="banner">
+        Hello there
+</div>
+<div class="nav-bar">
+        <div class="nav-item">
+                <a href="/about/">About Me</a>
+        </div>
+        <div class="nav-item">
+                <a href="/projects/">Projects</a>
+        </div>
+        <div class="nav-item">
+                <a href="/contact/">Contact</a>
+        </div>
+</div> 
+
+{# body content #}
+{% if proj_list %}
+<div id="preview-menu-container">
+	<div id="option-container">
+	{% for project in proj_list %}
+	{% if forloop.first %}
+	<div 
+		class="preview-option selected-preview-option" 
+		data-title="{{ project.title }}"
+  		data-text="{{ project.description|markdown }}">
+	{% else %}
+	<div
+    		class="preview-option"
+      		data-title="{{ project.title }}"
+		data-text="{{ project.description|markdown }}">
+	{% endif %}
+		<h2>{{ project.title }}</h2>
+	</div>
+	{% endfor %}
+	</div>
+	<div class="project-preview">
+	{% with project=proj_list.0 %}
+        {% if project in proj_list %}
+		<h2> {{ project.title }} </h2>
+                <p>{{ project.description|markdown }}
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                </p>
+	{% else %}
+	<h2> There's a problem with this project. Oops! </h2>
+	{% endif %}
+	{% endwith %}	
+	</div>
+</div>
+{% else %}
+<p> There are no projects! </p>
+{% endif %}

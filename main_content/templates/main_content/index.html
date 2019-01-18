@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_content/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Raleway|Open+Sans" rel="stylesheet">
+
+<div class="item-list">
+<center>
+{% if project_list %}
+        <ul>
+        {% for project in project_list %}
+        <a class="project" href="{% url 'main_content:detail' project.id %}">{{ project.title }}</a>
+        {% endfor %}
+        </ul>
+{% else %}
+        <p>No projects yet!</p>
+{% endif %}
+</center>
+</div>
+~       
