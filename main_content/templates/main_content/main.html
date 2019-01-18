@@ -1,0 +1,65 @@
+{# load all static directories #}
+{% load static %}
+
+{# load css and style files #}
+<link rel="stylesheet" type="text/css" href="{% static 'main_content/main.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Open+Sans" rel="stylesheet">
+
+{# for markdown capabilities #}
+{% load markdown_deux_tags %}
+
+{# load javascript/jquery library #}
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+
+{# load my scripts #}
+<script type="text/javascript" src="{% static 'main_content/change_preview.js' %}"></script>
+
+<div id="welcome-fullpage-container">
+	<div class="welcome">
+	</div>
+	<div class="nav-bar">
+		<div class="nav-item">
+                	<a href="#about">About Me</a>
+        	</div>
+        	<div class="nav-item">
+                	<a href="#projects">Projects</a>
+        	</div>
+        	<div class="nav-item">
+                	<a href="#contact">Contact</a>
+        	</div>
+	</div>
+</div>
+
+<div class="about-fullpage-container" id="about">
+	<div class="about-info">
+	<h1>About Me</h1>
+
+	<p class="about-professional">I am currently a Computer Science student at Grand Valley State University.  
+	</p>
+
+	<p class="about-personal">My hobbies include knitting and music.</p>
+	</div>
+</div>
+
+<div class="projects-fullpage-container" id="projects">
+	<h1>Projects</h1>
+	{% if proj_list %}
+	<div class="projects-bar">
+		{% for project in proj_list %}
+		<a class="projects-bar-item" href="#{{ project.id }}">{{ project.title }}</a>
+		{% endfor %}
+	</div>
+	{% for project in proj_list %}
+	<div class="project-detail" id='{{ project.id }}'>
+			<h1 class="project-detail-header">{{ project.title }}</h1>	
+			<p class="project-detail-desc">{{ project.description|markdown }}</p>
+	</div>
+	{% endfor %}
+	{% else %}
+	<h1>There are no projects here. Oops!</h1>
+	{% endif %}
+</div>
+
+<div class="contact-fullpage-container" id="contact">
+
+</div>

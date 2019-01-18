@@ -24,7 +24,7 @@ def about(request):
 def contact(request):
     return HttpResponse("This is the contact page.")
 
-def home(request):
+def main(request):
     proj_list = Project.objects.order_by('-last_updated')
     context = {'proj_list':proj_list}
-    return render(request, 'main_content/home.html', context)
+    return render(request, 'main_content/main.html', context)

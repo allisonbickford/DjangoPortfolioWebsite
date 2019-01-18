@@ -77,6 +77,7 @@ body {
 }
 
 .preview-option:hover {
+	border-color: #ff9933;
 	box-shadow: 0px 0px 0px 5px #ff9933;
 }
 
