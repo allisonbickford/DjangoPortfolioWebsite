@@ -1,0 +1,4 @@
+@keyframes all-anim {
+	from {stroke-dashoffset: -100px;}
+	to {stroke-dashoffset:0px;}
+}

@@ -9,21 +9,6 @@ class DetailView(generic.DetailView):
     model = Project
     template_name = 'main_content/detail.html'
 
-class HomeView(generic.DetailView):
-    model = Project
-    template_name='main_content/home.html'
-
-def projects(request):
-    proj_list = Project.objects.order_by('-last_updated')
-    context = {'proj_list':proj_list}
-    return render(request, 'main_content/index.html', context)
-
-def about(request):
-    return HttpResponse("This is about me.")
-
-def contact(request):
-    return HttpResponse("This is the contact page.")
-
 def main(request):
     proj_list = Project.objects.order_by('-last_updated')
     context = {'proj_list':proj_list}

@@ -7,11 +7,65 @@ a {
 }
 
 #welcome-fullpage-container {
-	background: #404040;
+	background-color: #ffd9b3;
 	height: 900px;
 	width: 100%;
 	position: relative;
 }
+
+.my-name {
+}
+
+@keyframes dash {
+	100% {stroke-dashoffset:0px;}
+}
+
+
+#allison-path {
+	stroke-dasharray: 2000;
+	stroke-dashoffset: 2000;
+	stroke: #4d2600;
+        animation: dash 2s linear forwards;
+}
+
+#allison-path-2 {
+	stroke-dasharray: 2000;
+	stroke-dashoffset: 2000;
+	stroke: #4d2600;
+        animation: dash 2s linear forwards;
+
+}
+
+#a-dot-path-2, #a-dot-path {
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+	stroke: #4d2600;
+	animation: dash .6s linear forwards .4s;
+}
+
+#bickford-path {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 2000;
+	stroke: #4d2600;
+        animation: dash 2s linear forwards 1s;
+
+}
+
+#b-line-path {
+	stroke-dasharray: 500;
+	stroke-dashoffset: 500;
+	stroke: #4d2600;
+	animation: dash .8s linear forwards 1s;
+}
+
+#b-dot-path {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+	stroke: #4d2600;
+        animation: dash .8s linear forwards 1.5s;
+
+}
+
 
 .nav-bar {
 	width: 100%;
@@ -23,12 +77,12 @@ a {
 .nav-item {
 	display: inline-block;
 	margin: 0 2em;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 18px;
 }
 
 .nav-item a {
-	color: #ff9933;
+	color: #4d2600;
 	text-decoration: none;
 }
 
@@ -38,8 +92,8 @@ a {
 
 .about-fullpage-container {
 	position: relative;
-	background: #595959;
-	color: #ff9933;
+	background: #ffd9b3;
+	color: #4d2600;
 	padding: 10px;
 	min-height: 900px;
 }
@@ -50,12 +104,12 @@ a {
 }
 
 .about-info h1 {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 36px;
 }
 
 .about-info p {
-	font-family: 'Open Sans', sans-serif;
-	overflow: hidden;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .projects-fullpage-container {
@@ -99,5 +153,41 @@ a {
 }
 
 .contact-fullpage-container {
+	font-family: 'Open Sans', sans-serif;
+	color: #ff9933;
+	background-color: #595959;
+	padding: 10px;
+	text-align: center;
+}
 
+.form-container {
+	margin: auto;
+	width: 80%;
+}
+
+input[type=text], select, textarea {
+	width: 50%;
+	padding: 12px;
+	border: 1px solid #d9d9d9;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+	background-color: #d9d9d9;
+}
+
+input[type=submit] {
+	font-size: 16px;
+	width: 50%;
+	background-color: #ff9933;
+	color: #595959;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #ffbf80;
 }
