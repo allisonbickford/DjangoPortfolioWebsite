@@ -101,6 +101,7 @@ a {
 .about-info {
 	width: 80%;
 	margin: auto;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .about-info h1 {
@@ -108,17 +109,16 @@ a {
 	font-size: 36px;
 }
 
-.about-info p {
-	font-family: 'Montserrat', sans-serif;
+.about-info li {
 }
 
 .projects-fullpage-container {
 	min-height: 900px;
-	background: #595959;
+	background: #ffd9b3;
 	padding: 10px;
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
-	color: #ff9933;
+	color: #4d2600;
 }
 
 .projects-bar {
@@ -129,13 +129,13 @@ a {
 .projects-bar-item {
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
-	color: #ff9933;
+	color: #4d2600;
 	display: inline-block;
 	padding: 8px;
 }
 
 .project-detail {
-	color: #ff9933;
+	color: #4d2600;
 	width: 80%;
 	margin: auto;
 	text-align: left;
@@ -145,7 +145,7 @@ a {
 	font-family: 'Raleway', sans-serif;
 	border-top-style: solid;
 	border-top-width: 1px;
-	border-top-color: #ff9933;
+	border-top-color: #4d2600;
 }
 
 .project-detail p{
@@ -154,8 +154,8 @@ a {
 
 .contact-fullpage-container {
 	font-family: 'Open Sans', sans-serif;
-	color: #ff9933;
-	background-color: #595959;
+	color: #4d2600;
+	background-color: #ffd9b3;
 	padding: 10px;
 	text-align: center;
 }
@@ -168,20 +168,20 @@ a {
 input[type=text], select, textarea {
 	width: 50%;
 	padding: 12px;
-	border: 1px solid #d9d9d9;
+	border: 1px solid #ffd9b3;
 	border-radius: 4px;
 	box-sizing: border-box;
 	margin-top: 6px;
 	margin-bottom: 16px;
 	resize: vertical;
-	background-color: #d9d9d9;
+	background-color: white;
 }
 
 input[type=submit] {
 	font-size: 16px;
 	width: 50%;
-	background-color: #ff9933;
-	color: #595959;
+	background-color: #ffd9b3;
+	color: #4d2600;
 	padding: 12px 20px;
 	border: none;
 	border-radius: 4px;
@@ -189,5 +189,5 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-	background-color: #ffbf80;
+	background-color: brown;
 }
