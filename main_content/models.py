@@ -1,4 +1,10 @@
+import os
 from django.db import models
+
+from django.conf import settings
+
+def get_image_path(instance, filename):
+    return os.path.join('images/', filename)
 
 class Project(models.Model):
     #the name of the project
@@ -18,3 +24,7 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+class ProjectImage(models.Model):
+    property = models.ForeignKey(Project, related_name='images', on_delete=models.DO_NOTHING)
+    image = models.ImageField(upload_to=get_image_path)

@@ -1,14 +1,19 @@
 from django.contrib import admin
 
-from .models import Project
+from .models import Project, ProjectImage
+
+class ProjectImageInline(admin.TabularInline):
+    model = ProjectImage
+    extra = 3
 
 class ProjectAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Project Information',     {'fields': ['title']}),
-        (None,                      {'fields': ['language']}),
-        (None,                      {'fields': ['last_updated']}),
-        (None,                      {'fields': ['link']}),
-        (None,                      {'fields': ['description']}),
-    ]
+    fields = [
+            'title', 
+            'language', 
+            'last_updated', 
+            'link', 
+            'description'
+            ]
+    inlines = [ ProjectImageInline, ]
 
 admin.site.register(Project, ProjectAdmin)
