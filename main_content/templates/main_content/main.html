@@ -15,8 +15,9 @@
 {# load my scripts #}
 <script type="text/javascript" src="{% static 'main_content/change_preview.js' %}"></script>
 
+{# the top page #}
 <div id="welcome-fullpage-container">
-	{#<img src="{% static 'main_content/lotsobeans.png' %}" alt="beans" width="800" height="400" style="position:absolute;top:0px;right:0px;">#}
+	<!-- signature animation -->
 	<div class="my-name">
 	<svg id="signature" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-50 -100 500 210.1">
   <defs>
@@ -81,6 +82,8 @@
 	</div>
 </div>
 
+
+{# the about section #}
 <div class="about-fullpage-container" id="about">
 	<div class="about-info">
 	<h1>About Me</h1>
@@ -112,6 +115,7 @@
 	</div>
 </div>
 
+{# projects #}
 <div class="projects-fullpage-container" id="projects">
 	<h1>Projects</h1>
 	{% if proj_list %}
@@ -124,16 +128,20 @@
 	<div class="project-detail" id='{{ project.id }}'>
 		<div class="project-detail-header">
 			<h1>{{ project.title }}</h1>
+			<!-- link to github -->
 			<a href="{{ project.link }}" target="_blank">
 				<img class="github-icon" src="{% static 'main_content/github_icon.png' %}" width="40" height="40">
 			</a>
 		</div>
+			<!-- project description -->
 			<p class="project-detail-desc">{{ project.description|markdown }}</p>
+			<!-- showing project images -->
 			{% if project.images.all %}
 			{% with img_list=project.images.all %}
 			<div class="project-image-container">
 			{% for image in img_list %}
 				<div class="project-image">
+					<!-- each picture needs a unique id to work -->
 					<input type="checkbox" id="zoom-check-{{project.title}}-{{forloop.counter}}">
 					<label for="zoom-check-{{project.title}}-{{forloop.counter}}">
 				<img src="{{ image.image.url }}"></img>
@@ -151,17 +159,22 @@
 	{% endif %}
 </div>
 
+{# contact #}
 <div class="contact-fullpage-container" id="contact">
 	<h1>Contact Me</h1>
-	<div class="form-container">
-	<form>
-	First Name:<br>
-	<input type="text" name="firstname"><br>
-	Last Name:<br>
-	<input type="text" name="lastname"><br>
-	Subject:<br>
-	<textarea type="text" name="subject" placeholder="Type here!" style="height:200px"></textarea><br>
-	<input type="submit" value="Send">
-	</form>
+	<p class="contact-description"> Looking to get in touch? Please, feel free to click these links. </p>
+	<div class="contact-grid-container">
+		<div class="contact-image">
+			<img src="{% static 'main_content/contact_image.jpg' %}" width="400px" height="auto">
+		</div>
+		<div class="link-container">
+			<h2>Allison Bickford</h2>
+			<a href="https://www.linkedin.com/in/allison-bickford-592081161/">
+				<img class="link-image" src="{% static 'main_content/linkedin.png' %}" width="90" height="90">
+			</a>
+			<a href="mailto: bickfora@mail.gvsu.edu">
+				<img class="link-image" src="{% static 'main_content/email.png' %}" width="90" height="100">
+			</a>
+		</div>
 	</div>
 </div>

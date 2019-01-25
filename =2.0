@@ -1,0 +1,6 @@
+Collecting django
+  Using cached https://files.pythonhosted.org/packages/e0/eb/6dc122c6d0a82263bd26bebae3cdbafeb99a7281aa1dae57ca1f645a9872/Django-1.11.18-py2.py3-none-any.whl
+Collecting pytz (from django)
+  Using cached https://files.pythonhosted.org/packages/61/28/1d3920e4d1d50b19bc5d24398a7cd85cc7b9a75a490570d5a30c57622d34/pytz-2018.9-py2.py3-none-any.whl
+Installing collected packages: pytz, django
+Successfully installed django-1.11.18 pytz-2018.9

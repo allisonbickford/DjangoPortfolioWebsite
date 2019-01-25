@@ -1,11 +1,14 @@
+/* get rid of extraneous margins */
 body {
 	margin: 0px;
 }
 
+/* keep links from being underlined */
 a {
 	text-decoration:none;
 }
 
+/* include my picture as the background */
 #welcome-fullpage-container {
 	background-image: url("colorized_cropped_cover.jpg");
 	background-size: cover;
@@ -15,14 +18,12 @@ a {
 	position: relative;
 }
 
-.my-name {
-}
-
+/* animation for handwriting */
 @keyframes dash {
 	100% {stroke-dashoffset:0px;}
 }
 
-
+/* the svg stroke settings for my first name */
 #allison-path {
 	stroke-dasharray: 2000;
 	stroke-dashoffset: 2000;
@@ -38,6 +39,7 @@ a {
 
 }
 
+/* to dot the i */
 #a-dot-path-2, #a-dot-path {
 	stroke-dasharray: 400;
 	stroke-dashoffset: 400;
@@ -45,6 +47,7 @@ a {
 	animation: dash .6s linear forwards .4s;
 }
 
+/* svg stroke settings for last name */
 #bickford-path {
         stroke-dasharray: 2000;
         stroke-dashoffset: 2000;
@@ -68,7 +71,7 @@ a {
 
 }
 
-
+/* bar for site navigation */
 .nav-bar {
 	width: 100%;
 	text-align:center;
@@ -92,6 +95,7 @@ a {
 	color: #cc6600;
 }
 
+/* all the 'about me' settings */
 .about-fullpage-container {
 	position: relative;
 	background: #ffd9b3;
@@ -109,6 +113,9 @@ a {
 .about-info h1 {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 36px;
+	text-align: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #4d2600;
 }
 
 .about-info li {
@@ -118,11 +125,16 @@ a {
 	min-height: 900px;
 	background: #ffd9b3;
 	padding: 10px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 	color: #4d2600;
 }
 
+.projects-fullpage-container h1 {
+	font-size:36px;
+}
+
+/* navigation for each project held here */
 .projects-bar {
 	text-align: center;
 	margin-top: 30px;
@@ -149,6 +161,7 @@ a {
 	text-align: left;
 }
 
+/* for project name and github link */
 .project-detail-header {
 	font-family: 'Raleway', sans-serif;
 	border-top-style: solid;
@@ -159,6 +172,7 @@ a {
 	align-items: center;
 }
 
+/* to make github icon look better */
 .github-icon {
 	margin: 10px;
 }
@@ -171,10 +185,12 @@ a {
 	font-family: 'Open Sans', sans-serif;
 }
 
+/* for project images zoom toggle */
 input[type=checkbox] {
 	display: none;
 }
 
+/* display images in a flexbox */
 .project-image-container {
 	display: flex;
 	flex-direction: row;
@@ -187,12 +203,14 @@ input[type=checkbox] {
 	cursor: zoom-in;
 }
 
+/* scale image when checkbox is toggled */
 input[type=checkbox]:checked ~ label > img {
 	transform: scale(2);
 	z-index: 1;
 	cursor: zoom-out;
 }
 
+/* default image settings */
 .project-image img {
 	width: 450px;
 	height: auto;
@@ -204,37 +222,43 @@ input[type=checkbox]:checked ~ label > img {
 	color: #4d2600;
 	background-color: #ffd9b3;
 	padding: 10px;
+	min-height: 600px;
+}
+
+.contact-fullpage-container h1 {
+	width: 80%;
+	border-bottom: 1px solid #4d2600;
+	padding: 20px;
+	text-align: center;
+	margin: auto;
+}
+
+.contact-grid-container {
+	display: flex;
+	align-items: center;
+	width: 80%;
+	margin: auto;
+}
+
+.contact-description {
 	text-align: center;
 }
 
-.form-container {
+.contact-image {
+	margin: 20px;
+}
+
+.link-container {
 	margin: auto;
-	width: 80%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
-input[type=text], select, textarea {
-	width: 50%;
-	padding: 12px;
-	border: 3px solid #4d2600;
-	border-radius: 4px;
-	box-sizing: border-box;
-	margin-top: 6px;
-	margin-bottom: 16px;
-	resize: vertical;
-	background-color: white;
+.link-container a {
+	margin: 10px;
 }
 
-input[type=submit] {
-	font-size: 16px;
-	width: 50%;
-	background-color: #ffd9b3;
-	color: #4d2600;
-	padding: 12px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-input[type=submit]:hover {
-	background-color: brown;
+.link-image:hover {
+	opacity: 0.7;
 }
